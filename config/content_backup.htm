@@ -172,8 +172,33 @@
 <h1>Stage-3</h1>
 <h2>task1</h2>
 <h3>獲得正確順序(沒嵌入網站)</h3>
-<h3>嵌入網站</h3>
-<h2>task2</h2>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open("123.txt") as fh:
+    data = fh.readlines()
+for i in range(len(data)):
+    data = [j.replace("a40823112",'') for j in data]
+    group = data[i].rstrip("\n").split("\t")
+    group = [i for i in group if i]
+    new_set = list(set(group))
+    old_order = sorted(new_set,key=group.index)
+    print(old_order)</pre>
+</div>
+<div class="line number2 index1 alt1"><code class="py comments"></code></div><h3>嵌入網站</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open("123.txt") as fh:
+    data = fh.readlines()
+for i in range(len(data)):
+    data = [j.replace("a40823112",'') for j in data]
+    group = data[i].rstrip("\n").split("\t")
+    group = [i for i in group if i]
+    new_set = list(set(group))
+    old_order = sorted(new_set,key=group.index)
+    print('&lt;p&gt;'+group[0]+'|&lt;a href="https://'+group[1]+'.github.io/stage3-ag'+group[0][9]+'"&gt;網站&lt;/a&gt;|&lt;a href="https://github.com/'+group[2]+'/stage3-ag'+group[0][9]+'"&gt;倉儲&lt;/a&gt;&lt;/p&gt;')
+    for z in range(2,18,2):
+        try:
+            print('&lt;p&gt;'+group[z]+'|Website:'+'&lt;a href="https://'+group[z]+'.github.io/cd2021'+'"&gt;'+group[z]+'&lt;/a&gt;'+'|Repository:'+'&lt;a href="https://github.com/'+group[z]+'/cd2021'+'"&gt;'+group[z]+'&lt;/a&gt;&lt;/p&gt;')
+        except:
+            continue</pre>
+<p></p><h2>task2</h2>
 <p>將stage-1與stage-2用python remote api 操控</p>
 <h2>task3</h2>
 <h1>機器人學</h1>

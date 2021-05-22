@@ -174,6 +174,7 @@
 <h3>獲得正確順序(沒嵌入網站)</h3>
 <div class="line number1 index0 alt2">
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open("123.txt") as fh:
+##記得txt要照編輯的檔名
     data = fh.readlines()
 for i in range(len(data)):
     data = [j.replace("a40823112",'') for j in data]
@@ -193,7 +194,7 @@ for i in range(len(data)):
     new_set = list(set(group))
     old_order = sorted(new_set,key=group.index)
     print('&lt;p&gt;'+'---------'+group[0]+'|&lt;a href="https://'+group[1]+'.github.io/stage3-ag'+group[0][9]+'"&gt;grp web&lt;/a&gt;|&lt;a href="https://github.com/'+group[2]+'/stage3-ag'+group[0][9]+'"&gt;grp repo&lt;/a&gt;&lt;/p&gt;')
-    for x in range(1,18,2):
+    for x in range(1,16,2):
         try:
             print('&lt;p&gt;'+group[x]+'|Web:'+'&lt;a href="https://'+group[x]+'.github.io/cd2021'+'"&gt;'+group[x]+'&lt;/a&gt;'+'|Repo:'+'&lt;a href="https://github.com/'+group[x]+'/cd2021'+'"&gt;'+group[x]+'&lt;/a&gt;&lt;/p&gt;')
         except:

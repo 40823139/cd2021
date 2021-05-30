@@ -217,6 +217,64 @@ for i in range(len(data)):
 <h2>基礎Python</h2>
 <p>在此將分享於外部所學的python基礎知識</p>
 <p>資料來源:<a href="https://www.youtube.com/user/padalab">彭彭的課程</a></p>
+<h3>set-dictionary</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">s = {3,4,5,6}
+print(3 in s)
+#印出3這個資料，是否在s裡面
+
+s = {3,4,5,6}
+print(3 not in s)
+#印出3這個資料，是否"不是"在s裡面
+
+s1 = {1,2,3}
+s2 = {2,3,4}
+s3 = s1&amp;s2 
+print(s3)
+#印出s1與s2的交集s3
+
+s3 = s1|s2 
+print(s3)
+#取得s1與s2的聯集，但不會重複取資料(因為聯集的概念)
+
+s3 = s1-s2 
+print(s3)
+#從s1減掉與s2相同的部分，即差集(注意!s1-s2不等於s2-s1)
+
+s3 = s1^s2 
+print(s3)
+#反交集，取s1與s2中不重疊部分
+
+s = set("fuckyou")
+print(s)
+#把set(字串)拆成集合，不過順序不會照原本的(因為集和本來就沒順序)
+print("s" in s)
+#印出s這個資料是否在s集合中
+
+#字典運算
+dic={"fuck":'幹',"you":'你'}
+print(dic["fuck"])
+#印出字典裡fuck代表什麼
+
+dic["fuck"] = "love"
+print(dic["fuck"])
+#把字典裡fuck原本的定義更改成love
+
+dic={"fuck":'幹',"you":'你'}
+print("fuck" in dic)
+#判斷fuck是否在字典裡
+
+dic={"fuck":'幹',"you":'你'}
+print("幹" in dic)
+#判斷"幹"是否在字典裡，實際上字典裡只有fuck 與 you ，剩下:的東西是定義
+
+del dic["fuck"]
+print(dic)
+#刪除字典中的fuck
+
+dic={x:x*2 for x in{3,4,5}}
+print(dic)
+#用列表產生字典，而字典定義看函數決定</pre>
+<p></p>
 <h3>start</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print("安安你好")
 #print("")內任何語言都可，但要記得括號內的""或''</pre>
@@ -257,7 +315,9 @@ x="Hello"
 print(x)
 x={3,5,6} # 集合 Set
 print(x)</pre>
-<p></p><h2>基礎C</h2><h1>About</h1>
+<p></p>
+<h2>基礎C</h2>
+<h1>About</h1>
 <p>Repository: <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a></p>
 <p>Github Pages: <a href="https://mde.tw/cmstemplate">https://mde.tw/cmstemplate</a></p>
 <p>利用 cmstemplate 建立以 CMSiMDE 作為子模組的動態與靜態網站方法為:</p>
@@ -403,7 +463,7 @@ variables:
 <li>假如使用者所選擇的倉儲名稱為: 帳號.github.io, 則 Github 會自動設定該倉儲的 main 分支為 Github Pages 根目錄, 意即一旦 Github Pages 完成轉檔 (提交訊息之後會出現綠勾), 則該倉儲的對應網頁將為: https://帳號.github.io</li>
 <li>若使用利用 <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a> 作為 template 所建立的倉儲名稱並非 帳號.github.io, 則使用者必須自行至該倉儲的 settings/Github Pages 選項中將 main branch 設為 Github Pages 對應的 root 目錄. 之後, Github 將會採用: 帳號.github.io/倉儲名稱 作為與該倉儲對應的 Github Pages 網址.</li>
 </ol>
-<h1>注意事項</h1>
+<h1>網站錯誤</h1>
 <p>因為 <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a> 將 CMSiMDE 倉儲作為 submodule, 因此使用者利用 cmstemplate 作為 template 後, 必須使用 git clone --recurse-submodules 取下遠端倉儲.</p>
 <p>例如:</p>
 <p style="padding-left: 30px;">若使用者的倉儲 URL 為 <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a></p>
@@ -444,6 +504,8 @@ variables:
 </ol>
 <h2>動態網站錯誤</h2>
 <p>CMSiMDE 動態網站經常出現的錯誤是無法對 config/content.htm 分頁, 這時可以利用 SCiTE 編輯 content.htm, 找尋是否 H1~H3 標註中是否帶有特殊符號, 如 "/" 或 ":" 等.</p>
+<h2>出現ValueError</h2>
+<p>當網站出現ValueError可能是因為generate pages時發生錯誤(如網頁轉換至一半，隨身碟拔除、跳掉)，所以在config下的html無法正確轉換出正確網頁，因此content.htm會是空的(可打開編輯器做確認)，若此時近端的config有備份的html可在確認版次與內容無誤後直接修復，但記得名稱是content.htm，不是content_backup.html(備份)，若備份的html內容有誤，則需從遠端倉儲抓上個版次的!</p>
 <h1>延伸開發</h1>
 <p>為了建立 responsive site:</p>
 <p>靜態網頁:</p>

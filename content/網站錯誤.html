@@ -133,10 +133,28 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Program << <a href='Program.html'>Previous</a> <a href='set-dictionary.html'>Next</a> >> set-dictionary<br /><h1>基礎Python</h1>
-<p>在此將分享於外部所學的python基礎知識</p>
-<p>資料來源:<a href="https://www.youtube.com/user/padalab">彭彭的課程</a></p>
-<br />Program << <a href='Program.html'>Previous</a> <a href='set-dictionary.html'>Next</a> >> set-dictionary</div>
+    <div id="tipue_search_content">建立網頁 << <a href='建立網頁.html'>Previous</a> <a href='標題選擇.html'>Next</a> >> 標題選擇<br /><h1>網站錯誤</h1>
+<p>因為 <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a> 將 CMSiMDE 倉儲作為 submodule, 因此使用者利用 cmstemplate 作為 template 後, 必須使用 git clone --recurse-submodules 取下遠端倉儲.</p>
+<p>例如:</p>
+<p style="padding-left: 30px;">若使用者的倉儲 URL 為 <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a></p>
+<p style="padding-left: 30px;">則可以在近端利用:</p>
+<p style="padding-left: 30px;">git clone --recurse-submodules <a href="https://github.com/mdecourse/cmstemplate.git">https://github.com/mdecourse/cmstemplate.git</a></p>
+<p style="padding-left: 30px;">將遠端倉儲資料存入 cmstemplate 目錄中.</p>
+<p>目前的 cmstemplate 內建 cms.bat 與 acp.bat 等兩個 batch 檔案, 可以協助使用者直接在倉儲根目錄啟動 CMSiMDE 動態網頁, 以及單一指令式即可完成 git add, git commit 以及 git push, 但是前提是使用者必須設定以 ssh 方式與 Github 倉儲進行驗證.</p>
+<p>例如:</p>
+<p style="padding-left: 30px;">若使用者已經將倉儲內容 clone 至近端, 且已經帶有 cmsimde 子模組的內容.</p>
+<p style="padding-left: 30px;">則可以在近端命令列進入 cmstemplate 倉儲目錄執行:</p>
+<p style="padding-left: 30px;">cms.bat</p>
+<p style="padding-left: 30px;">開啟動態網頁系統. 並以 <a>https://localhost:9443</a> 開啟.</p>
+<p style="padding-left: 30px;">一旦完成動態網頁的編輯, 利用 Generate Pages 可以轉為靜態網站, 且各 html 檔案將位於 content 目錄中.</p>
+<p style="padding-left: 30px;">若使用者希望檢查近端靜態網頁的內容, 可以利用 SciTE 開啟倉儲中的 http-server.py, 並利用瀏覽器以 <a href="https://localhost:8444">https://localhost:8444</a> 檢查靜態網頁內容.</p>
+<p style="padding-left: 30px;">一旦使用者要將近端倉儲的動態與靜態網頁內容推向 Github, 則必須將倉儲中 .git/config 的 url, 從 https 改為 ssh 的連線格式:</p>
+<p style="padding-left: 30px;">例如:</p>
+<p style="padding-left: 60px;">原先 .git/config origin 的 url 為 url = <a href="https://github.com/mdecourse/cmstemplate.git,">https://github.com/mdecourse/cmstemplate.git,</a> 則必須改為:</p>
+<p style="padding-left: 60px;">url = <a href="mailto:git@github.com:mdecourse/cmstemplate.git">git@github.com:mdecourse/cmstemplate.git</a></p>
+<p style="padding-left: 60px;">之後假如使用者要以 "add some files" 字串當作提交說明訊息, 則可以在命令列中的倉儲目錄執行:</p>
+<p style="padding-left: 60px;">acp.bat "add some files"</p>
+<br />建立網頁 << <a href='建立網頁.html'>Previous</a> <a href='標題選擇.html'>Next</a> >> 標題選擇</div>
         
     <!-- footer -->
       <div class="container">

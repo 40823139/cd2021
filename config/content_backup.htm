@@ -505,8 +505,7 @@ variables:
 <h2>動態網站錯誤</h2>
 <p>CMSiMDE 動態網站經常出現的錯誤是無法對 config/content.htm 分頁, 這時可以利用 SCiTE 編輯 content.htm, 找尋是否 H1~H3 標註中是否帶有特殊符號, 如 "/" 或 ":" 等.</p>
 <h2>出現ValueError</h2>
-<p>當網站出現ValueError可能是因為generate pages時發生錯誤(如網頁轉換至一半，隨身碟拔除、跳掉)，所以在config下的html無法正確轉換出正確網頁，因此content.htm會是空的(可打開編輯器做確認)，若此時近端的config有備份的html可在確認版次與內容無誤後直接修復，但記得名稱是content.htm，不是content_backup.html(備份)，若備份的html內容有誤，則需從遠端倉儲抓上個版次的!</p>
-<h1>延伸開發</h1>
+<p>當網站出現ValueError可能是因為generate pages時發生錯誤(如網頁轉換至一半，隨身碟拔除、跳掉)，所以在config下的html無法正確轉換出網頁，因此content.html會是空的(可打開編輯器做確認)，若此時近端的config有備份的html，可在確認版次與內容無誤後直接修復，但記得名稱是content.htm，不是content_backup.html(備份的html)，若備份的html內容有誤，則需從遠端倉儲抓上個版次的!</p><h1>延伸開發</h1>
 <p>為了建立 responsive site:</p>
 <p>靜態網頁:</p>
 <p style="padding-left: 30px;">Javascript 程式庫:</p>

@@ -274,7 +274,8 @@ print(dic)
 dic={x:x*2 for x in{3,4,5}}
 print(dic)
 #用列表產生字典，而字典定義看函數決定</pre>
-<p></p><h3>start</h3>
+<p></p>
+<h3>start</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print("安安你好")
 #print("")內任何語言都可，但要記得括號內的""或''</pre>
 <h3>datatype</h3>
@@ -314,7 +315,9 @@ x="Hello"
 print(x)
 x={3,5,6} # 集合 Set
 print(x)</pre>
-<p></p><h2>基礎C</h2><h1>About</h1>
+<p></p>
+<h2>基礎C</h2>
+<h1>About</h1>
 <p>Repository: <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a></p>
 <p>Github Pages: <a href="https://mde.tw/cmstemplate">https://mde.tw/cmstemplate</a></p>
 <p>利用 cmstemplate 建立以 CMSiMDE 作為子模組的動態與靜態網站方法為:</p>
@@ -480,7 +483,8 @@ variables:
 <p style="padding-left: 60px;">原先 .git/config origin 的 url 為 url = <a href="https://github.com/mdecourse/cmstemplate.git,">https://github.com/mdecourse/cmstemplate.git,</a> 則必須改為:</p>
 <p style="padding-left: 60px;">url = <a href="mailto:git@github.com:mdecourse/cmstemplate.git">git@github.com:mdecourse/cmstemplate.git</a></p>
 <p style="padding-left: 60px;">之後假如使用者要以 "add some files" 字串當作提交說明訊息, 則可以在命令列中的倉儲目錄執行:</p>
-<p style="padding-left: 60px;">acp.bat "add some files"</p><h2>標題選擇</h2>
+<p style="padding-left: 60px;">acp.bat "add some files"</p>
+<h2>標題選擇</h2>
 <p>由於 CMSiMDE 中的動態網站透過 config/content.htm 的 H1~H3 超文件標註進行分頁, 因此使用者利用 cms.bat 開啟動態網站後, 必須注意各頁面標題文字的選擇:</p>
 <ol>
 <li><span style="background-color: #ffff99;">頁面標題文字儘量簡短</span> - 頁面標題就有如文章的章節標題, 只要該標題具有該頁面內容的代表性即可, 越簡短越好.</li>
@@ -500,6 +504,8 @@ variables:
 </ol>
 <h2>動態網站錯誤</h2>
 <p>CMSiMDE 動態網站經常出現的錯誤是無法對 config/content.htm 分頁, 這時可以利用 SCiTE 編輯 content.htm, 找尋是否 H1~H3 標註中是否帶有特殊符號, 如 "/" 或 ":" 等.</p>
+<h2>出現ValueError</h2>
+<p>當網站出現ValueError可能是因為generate pages時發生錯誤(如網頁轉換至一半，隨身碟拔除、跳掉)，所以在config下的html無法正確轉換出正確網頁，因此content.htm會是空的(可打開編輯器做確認)，若此時近端的config有備份的html可在確認版次與內容無誤後直接修復，但記得名稱是content.htm，不是content_backup.html(備份)，若備份的html內容有誤，則需從遠端倉儲抓上個版次的!</p>
 <h1>延伸開發</h1>
 <p>為了建立 responsive site:</p>
 <p>靜態網頁:</p>

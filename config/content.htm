@@ -217,7 +217,86 @@ for i in range(len(data)):
 <h2>基礎Python</h2>
 <p>在此將分享於外部所學的python基礎知識</p>
 <p>資料來源:<a href="https://www.youtube.com/user/padalab">彭彭的課程</a></p>
-<h3>set-dictionary</h3>
+<h3>number-string</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 數字運算
+x=3+6
+print(x)
+
+x=3-6
+print(x)
+
+x=3*6
+print(x)
+
+x=3/6
+print(x)
+
+x=3//6
+print(x)
+#小數除法
+x=3/7
+print(x)
+#整數除法
+
+x=2**3
+print(x)
+#表次方
+x=2**0.5
+print(x)
+#用次方做開根號
+x=7%3
+print(x)
+#求餘數
+x=2+3
+print(x)
+
+x+=1 
+print(x)
+x-=1 
+print(x)
+#與C的+= -= *= /=概念都一樣
+
+# 字串運算
+s="Hello"
+print(s)
+
+s='Hello'
+print(s)
+#字串用"" 或 ''都可以 ，但要注意內外層邏輯
+s="Hell\"o"
+print(s)
+#\表示跳脫
+s="Hello"+"World"
+print(s)
+
+s="Hello\nWorld"
+print(s)
+
+s="""Hello
+
+
+World"""
+print(s)
+#python限定，三個"""可以做直接換行
+s="Hello"*3+"World"
+print(s)
+#字串運算依然照先乘除後加減
+
+# 字串會對內部的字元編號(索引)，0 開始算起
+s="Hello"
+print(s[0])
+print(s[1])
+print(s[2])
+#印出第n個字元
+print(s[1:4])
+#從編號1的字元印到編號4的字元
+print(s[:4])
+#從一開始印到編號四的字元，注意第一個是0開始
+print(s[1:])
+#從編號1的字元印到最後
+x = ("fuck"+'you'+' ')*3
+print(x)</pre>
+<p></p><h3>set-dictionary</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">s = {3,4,5,6}
 print(3 in s)
 #印出3這個資料，是否在s裡面

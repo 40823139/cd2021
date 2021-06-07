@@ -296,7 +296,8 @@ print(s[1:])
 #從編號1的字元印到最後
 x = ("fuck"+'you'+' ')*3
 print(x)</pre>
-<p></p><h3>set-dictionary</h3>
+<p></p>
+<h3>set-dictionary</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">s = {3,4,5,6}
 print(3 in s)
 #印出3這個資料，是否在s裡面
@@ -395,6 +396,58 @@ print(x)
 x={3,5,6} # 集合 Set
 print(x)</pre>
 <p></p>
+<h3>condition</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if True:
+    print('執行')
+#若為true 印出執行(注意 : 跟大小寫)
+if False:
+    print('執行')
+#若為false則不印出
+
+if True:
+    print('執行')
+else :
+    print('不執行')
+#if-else句型if成立就做，不成立就做else
+
+x=input("打字啦")
+#可輸入訊息，字串內可顯示要說明的文字
+
+x=input("打數字")
+x=int(x)
+if x&gt;100:
+    print('大於100')
+else :
+    print('小於100')
+#輸入字串，並且讓x為int(所以輸入非數字則錯誤)，x進入if-else凾式比大小
+
+x=input("打數字")
+x=int(x)
+if x&gt;200:
+    print('大於200')
+elif x&gt;100:
+    print('介於200~100')
+else :
+    print('小於100')
+#if-elif-else函式，if成立印出，不成立看elif，elif成立則執行，，elif也不成立就執行else
+
+#四則運算
+a=input("打第一個數字")
+b=input("打第二個數字")
+a=int(a)
+b=int(b)
+output=input('輸入+-*/')
+if output == '+':
+    print(a+b)
+elif output=='-':
+    print(a-b)
+elif output=='*':
+    print(a*b)
+elif output=='/':
+    print(a/b)
+else :
+    print("不要亂打")
+#輸入a與b再輸入運算子output，若為四則運算印出，若不是則印出else提示字(elif能有好幾個)</pre>
 <h2>基礎C</h2>
 <h1>About</h1>
 <p>Repository: <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a></p>
@@ -584,7 +637,8 @@ variables:
 <h2>動態網站錯誤</h2>
 <p>CMSiMDE 動態網站經常出現的錯誤是無法對 config/content.htm 分頁, 這時可以利用 SCiTE 編輯 content.htm, 找尋是否 H1~H3 標註中是否帶有特殊符號, 如 "/" 或 ":" 等.</p>
 <h2>出現ValueError</h2>
-<p>當網站出現ValueError可能是因為generate pages時發生錯誤(如網頁轉換至一半，隨身碟拔除、跳掉)，所以在config下的html無法正確轉換出網頁，因此content.html會是空的(可打開編輯器做確認)，若此時近端的config有備份的html，可在確認版次與內容無誤後直接修復，但記得名稱是content.htm，不是content_backup.html(備份的html)，若備份的html內容有誤，則需從遠端倉儲抓上個版次的!</p><h1>延伸開發</h1>
+<p>當網站出現ValueError可能是因為generate pages時發生錯誤(如網頁轉換至一半，隨身碟拔除、跳掉)，所以在config下的html無法正確轉換出網頁，因此content.html會是空的(可打開編輯器做確認)，若此時近端的config有備份的html，可在確認版次與內容無誤後直接修復，但記得名稱是content.htm，不是content_backup.html(備份的html)，若備份的html內容有誤，則需從遠端倉儲抓上個版次的!</p>
+<h1>延伸開發</h1>
 <p>為了建立 responsive site:</p>
 <p>靜態網頁:</p>
 <p style="padding-left: 30px;">Javascript 程式庫:</p>

@@ -133,65 +133,59 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">number-string << <a href='number-string.html'>Previous</a> <a href='start.html'>Next</a> >> start<br /><h1>set-dictionary</h1>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">s = {3,4,5,6}
-print(3 in s)
-#印出3這個資料，是否在s裡面
+    <div id="tipue_search_content">datatype << <a href='datatype.html'>Previous</a> <a href='基礎C.html'>Next</a> >> 基礎C<br /><h1>condition</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if True:
+    print('執行')
+#若為true 印出執行(注意 : 跟大小寫)
+if False:
+    print('執行')
+#若為false則不印出
 
-s = {3,4,5,6}
-print(3 not in s)
-#印出3這個資料，是否"不是"在s裡面
+if True:
+    print('執行')
+else :
+    print('不執行')
+#if-else句型if成立就做，不成立就做else
 
-s1 = {1,2,3}
-s2 = {2,3,4}
-s3 = s1&amp;s2 
-print(s3)
-#印出s1與s2的交集s3
+x=input("打字啦")
+#可輸入訊息，字串內可顯示要說明的文字
 
-s3 = s1|s2 
-print(s3)
-#取得s1與s2的聯集，但不會重複取資料(因為聯集的概念)
+x=input("打數字")
+x=int(x)
+if x&gt;100:
+    print('大於100')
+else :
+    print('小於100')
+#輸入字串，並且讓x為int(所以輸入非數字則錯誤)，x進入if-else凾式比大小
 
-s3 = s1-s2 
-print(s3)
-#從s1減掉與s2相同的部分，即差集(注意!s1-s2不等於s2-s1)
+x=input("打數字")
+x=int(x)
+if x&gt;200:
+    print('大於200')
+elif x&gt;100:
+    print('介於200~100')
+else :
+    print('小於100')
+#if-elif-else函式，if成立印出，不成立看elif，elif成立則執行，，elif也不成立就執行else
 
-s3 = s1^s2 
-print(s3)
-#反交集，取s1與s2中不重疊部分
-
-s = set("fuckyou")
-print(s)
-#把set(字串)拆成集合，不過順序不會照原本的(因為集和本來就沒順序)
-print("s" in s)
-#印出s這個資料是否在s集合中
-
-#字典運算
-dic={"fuck":'幹',"you":'你'}
-print(dic["fuck"])
-#印出字典裡fuck代表什麼
-
-dic["fuck"] = "love"
-print(dic["fuck"])
-#把字典裡fuck原本的定義更改成love
-
-dic={"fuck":'幹',"you":'你'}
-print("fuck" in dic)
-#判斷fuck是否在字典裡
-
-dic={"fuck":'幹',"you":'你'}
-print("幹" in dic)
-#判斷"幹"是否在字典裡，實際上字典裡只有fuck 與 you ，剩下:的東西是定義
-
-del dic["fuck"]
-print(dic)
-#刪除字典中的fuck
-
-dic={x:x*2 for x in{3,4,5}}
-print(dic)
-#用列表產生字典，而字典定義看函數決定</pre>
-<p></p>
-<br />number-string << <a href='number-string.html'>Previous</a> <a href='start.html'>Next</a> >> start</div>
+#四則運算
+a=input("打第一個數字")
+b=input("打第二個數字")
+a=int(a)
+b=int(b)
+output=input('輸入+-*/')
+if output == '+':
+    print(a+b)
+elif output=='-':
+    print(a-b)
+elif output=='*':
+    print(a*b)
+elif output=='/':
+    print(a/b)
+else :
+    print("不要亂打")
+#輸入a與b再輸入運算子output，若為四則運算印出，若不是則印出else提示字(elif能有好幾個)</pre>
+<br />datatype << <a href='datatype.html'>Previous</a> <a href='基礎C.html'>Next</a> >> 基礎C</div>
         
     <!-- footer -->
       <div class="container">

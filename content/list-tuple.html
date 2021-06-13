@@ -133,10 +133,63 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Program << <a href='Program.html'>Previous</a> <a href='number-string.html'>Next</a> >> number-string<br /><h1>基礎Python</h1>
-<p>在此將分享於外部所學的python基礎知識</p>
-<p>資料來源:<a href="https://www.youtube.com/user/padalab">彭彭的課程</a></p>
-<br />Program << <a href='Program.html'>Previous</a> <a href='number-string.html'>Next</a> >> number-string</div>
+    <div id="tipue_search_content">condition << <a href='condition.html'>Previous</a> <a href='基礎C.html'>Next</a> >> 基礎C<br /><h1>list-tuple</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 有序可變動列表 List
+grades=[12,60,25,70,90]
+#給予一列表list[]，裡面的是資料
+
+print(grades)
+print(grades[0])
+#印出編號第0個的資料
+
+print(grades[3])
+print(grades[1:4])
+#印出編號1到3的資料(在1到4的區間，但不含4)
+
+
+grades=[12,60,25,70,90]
+grades[0]=55 
+# 把編號0的資料assign成55
+
+print(grades)
+grades=[12,60,25,70,90]
+grades[1:4]=[] 
+# 把編號從1到3的資料(1到4的區間，不含4)變成空的(刪掉)
+
+print(grades)
+grades=[12,60,25,70,90]
+grades=grades+[12,33]
+print(grades)
+#grade合成
+
+grades=[12,60,25,70,90] 
+length=len(grades)
+print(length)
+# 取得列表的長度(資料有幾個)，len(列表資料)，
+
+data=[[3,4,5],[6,7,8]]
+print(data[0])
+#印出編號0的資料(此時編號0是一個garde[3,4,5])
+
+print(data[0][1])
+#印出資料編號0中的編號1資料
+print(data[0][0:2])
+#印出資料編號0中從0~1編號的資料(不含2)
+print(data)
+data[0][0:2]=[5,5,5]
+print(data)
+#把資料編號0中編號0~1資料assign成資料{[5,5,5]，然後印出
+
+# 有序不可變動列表 Tuple
+data=(3,4,5)
+print(data[2])
+print(data[0:2])
+#用法同list，但資料不可變
+
+data[0] = 5
+print(data)
+# # 錯誤︰Tuple的資料不可以變動</pre>
+<br />condition << <a href='condition.html'>Previous</a> <a href='基礎C.html'>Next</a> >> 基礎C</div>
         
     <!-- footer -->
       <div class="container">

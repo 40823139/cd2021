@@ -171,7 +171,107 @@
 <p>成品:</p>
 <h1>Stage-3</h1>
 <h2>W13~W14</h2>
-<h3>Pick and Place</h3>
+<h3>翻譯</h3>
+<p><span>We saw this simple two-link robot in the previous lecture about forward kinematics.</span></p>
+<p>我們之前有在正向運動學的課程中有看到這個簡單的二連桿機械手臂。</p>
+<p></p>
+<p><span>The tooltip pose of this robot is described simply by two numbers, the coordinates x and y with respect to the world coordinate frame.</span></p>
+<p>這個機械手臂的工具提示框是由相對於世界座標的<span>x</span>與<span>y</span>這兩個簡單的數值所</p>
+<p></p>
+<p><span>So, the problem here is that given x and y, we want to determine the joined angles, q1 and q2.</span></p>
+<p>那麼，問題是，給<span>x</span>跟<span>y</span>，我們要去計算<span>joint</span>的角度<span>q1</span>跟<span>q2</span></p>
+<p><span> </span></p>
+<p><span>The solution that we’re going to follow in this particular section is a geometric one.</span></p>
+<p>這種特定情況的問題我們能利用到幾何</p>
+<p><span> </span></p>
+<p><span>We’re going to start with a simple piece of construction.</span></p>
+<p>我們先從一部份簡單的結構開始</p>
+<p><span> </span></p>
+<p><span>We’re going to overlay the red triangle on top of our robot.</span></p>
+<p>我們把這個紅色三角形覆蓋到我們的機械手臂上</p>
+<p><span> </span></p>
+<p><span>We know that the end point coordinate is x, y, so the vertical height of the triangle is y, the horizontal width is x.</span></p>
+<p>我們知道末端坐標是<span>x</span>跟<span>y</span>，三角形的垂直高度為<span>y</span>，水平寬度為<span>x</span>。</p>
+<p><span> </span></p>
+<p><span>And, using Pythagoras theorem, we can write r squared equals x squared plus y squared.</span></p>
+<p>那麼用畢氏定理，我們能把它寫成<span> r</span>²<span> = x </span>²<span>+ y</span>²。</p>
+<p></p>
+<p><span>So far, so easy.</span></p>
+<p>到現在都還算簡單</p>
+<p></p>
+<p><span>Now, we’ re going to look at this triangle highlighted here in red and we want to determine the angle alpha.</span></p>
+<p>那我們現在來看覆蓋在這的紅色三角形，我們要去算出<span>α</span>角</p>
+<p><span> </span></p>
+<p><span>In order to do that, we need to use the cosine rule.</span></p>
+<p>為了算它，我們要用餘弦定理</p>
+<p><span> </span></p>
+<p><span>And, if you’re a little rusty on the cosine rule, here is a bit of a refresher.</span></p>
+<p>如果餘弦定理對你來講有些生疏了，這邊幫你複習一下</p>
+<p><span> </span></p>
+<p><span>We have an arbitrary triangle.</span></p>
+<p>有個任意三角形。</p>
+<p><span> </span></p>
+<p><span>We don’t have any right angles in it and we’re going to label the length of this edge as A and the angle opposite that edge, we’re going to label as little a.</span></p>
+<p>它裡面沒任何直角，我們在這個邊標示上<span>A</span>，然後對角標一個小<span>a</span></p>
+<p><span> </span></p>
+<p><span>And, we do the same for this edge and this angle, and this edge and this angle.</span></p>
+<p>我們同樣把這個邊，這個角，還有那個邊，那個角標示</p>
+<p></p>
+<p><span>So, all together, the sides are labelled capitals A, B and C, and the angles are labelled little a, little b, and little c.</span></p>
+<p>如此一來，邊標<span>A</span>、<span>B</span>、<span>C</span>，角標<span>a</span>、<span>b</span>、<span>c</span></p>
+<p><span></span></p>
+<p><span>So, the cosine rule is simply this relationship here.</span></p>
+<p>所以呢，餘弦定理在這邊就是那麼簡單</p>
+<p></p>
+<p><span>It’s a bit like Pythagoras’ theorem except for this extra term on the end with the cos a in it.</span></p>
+<p>它有點像畢氏定理，只是多了個<span>cos(a)</span></p>
+<p><span> </span></p>
+<p><span>Now, let’s apply the cosine rule to the particular triangle we looked at a moment ago.</span></p>
+<p>現在，我們把餘弦定理套用在剛剛那個三角形</p>
+<p></p>
+<p><span>It’s pretty straightforward to write down this particular relationship.</span></p>
+<p>這個特殊關係可以直接寫下來</p>
+<p></p>
+<p><span>We can isolate the term cos alpha which gives us the angle alpha that we’re interested in.</span></p>
+<p>我們拿出我們想知道的這個<span>cos</span>α</p>
+<p><span> </span></p>
+<p><span>And, it’s defined in terms of the constant link lengths, A1 and A2 and the position of the end effector, x and y.</span></p>
+<p>而且它是用不變的連桿長<span>A1</span>跟<span>A2</span>，和端效器的位置<span>x</span>、<span>y</span>定義的</p>
+<p><span>(<span style="color: #ff0000;">*</span></span>特別補充<span>:</span>端效器就是機械手臂末端，用來跟朝遭互動的裝置，像是夾爪就是常見的端效器，把夾爪裝在手臂末端去夾取周遭的東西<span>)</span></p>
+<p><span> </span></p>
+<p><span>We can write this simple relationship between the angle alpha and q2.</span></p>
+<p>我們能夠寫出α和<span>q2</span>之間簡單的關係</p>
+<p><span> </span></p>
+<p><span>And, we know from the shape of the cosine function that cos of q2 must be equal to negative of cos alpha.</span></p>
+<p><span> </span></p>
+<p>而且我們用<span>cos</span>函數的圖能知道<span>cos q2</span>必須等於 –<span>cos </span>α。</p>
+<p><span>This time, let’s just write an expression for the cosine of the joined angle q2.</span></p>
+<p>這次我們來寫一下其<span>joint</span>角度<span>q2</span>的<span>cos</span>表示式</p>
+<p></p>
+<p><span>Now, we’re going to draw yet another red triangle and we’re going apply some simple trigonometry here.</span></p>
+<p>現在，我們再來畫個紅色三角形，而且我們會用到些簡單的三角函數</p>
+<p><span> </span></p>
+<p><span>If we know q2, then we know this length and this length of the red triangle.</span></p>
+<p>如果我們已知<span>q2</span>，就能得知這個長度和這個紅色三角形的長度。</p>
+<p><span> </span></p>
+<p><span>We can write this relationship for the sine of the joined angle q2.</span></p>
+<p>我們來寫一下這個<span>joint</span>角<span>q2</span>的餘弦關係</p>
+<p><span> </span></p>
+<p><span>Now, we can consider this bigger triangle whose angle is beta and this side length of this triangle is given here in blue.</span></p>
+<p>現在我們考慮比較大的這個三角形，它角度是β，邊則用藍色表示</p>
+<p><span> </span></p>
+<p><span>And, the length of the other side of the triangle is this.</span></p>
+<p>而且呢，三角形的另一邊是這樣的</p>
+<p><span> </span></p>
+<p><span>So, now we can write an expression for the angle beta in terms of these parameters here.</span></p>
+<p>所以現在我們能用這些三角形的參數寫出一個表示式</p>
+<p><span> </span></p>
+<p><span>Going back to the red triangle that we drew earlier, we can establish a relationship between q1 and the angle beta.</span></p>
+<p>回到稍早畫的紅色三角形，我們可建立出<span>q1</span>和β間的關係。</p>
+<p><span> </span></p>
+<p><span>Introduce yet another angle, this one gamma and we can write a relationship between the angle gamma and the tooltip coordinates x and y.</span></p>
+<p>再來介紹另一個角度<span>ɣ</span>，我們可寫出<span>ɣ</span>角和工具框座標<span>x</span>和<span>y</span>之間的關係。</p>
+<p><span> </span></p><h3>Pick and Place</h3>
 <p>task:利用機械手臂將球金字塔從A處轉移至B處</p>
 <p>*<span style="background-color: #ff6600;">此成品是參照乙班已完成者結果所完成的，非獨立完成</span></p>
 <p><a href="https://drive.google.com/drive/folders/10ctV4pFjcA5JmjR5XoIL6UKzBQ2iY8jl?usp=sharing">檔案</a></p>

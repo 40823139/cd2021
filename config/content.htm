@@ -271,7 +271,8 @@
 <p><span> </span></p>
 <p><span>Introduce yet another angle, this one gamma and we can write a relationship between the angle gamma and the tooltip coordinates x and y.</span></p>
 <p>再來介紹另一個角度<span>ɣ</span>，我們可寫出<span>ɣ</span>角和工具框座標<span>x</span>和<span>y</span>之間的關係。</p>
-<p><span> </span></p><h3>Pick and Place</h3>
+<p><span> </span></p>
+<h3>Pick and Place</h3>
 <p>task:利用機械手臂將球金字塔從A處轉移至B處</p>
 <p>*<span style="background-color: #ff6600;">此成品是參照乙班已完成者結果所完成的，非獨立完成</span></p>
 <p><a href="https://drive.google.com/drive/folders/10ctV4pFjcA5JmjR5XoIL6UKzBQ2iY8jl?usp=sharing">檔案</a></p>
@@ -554,6 +555,62 @@ elif output=='/':
 else :
     print("不要亂打")
 #輸入a與b再輸入運算子output，若為四則運算印出，若不是則印出else提示字(elif能有好幾個)</pre>
+<h3>list-tuple</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 有序可變動列表 List
+grades=[12,60,25,70,90]
+#給予一列表list[]，裡面的是資料
+
+print(grades)
+print(grades[0])
+#印出編號第0個的資料
+
+print(grades[3])
+print(grades[1:4])
+#印出編號1到3的資料(在1到4的區間，但不含4)
+
+
+grades=[12,60,25,70,90]
+grades[0]=55 
+# 把編號0的資料assign成55
+
+print(grades)
+grades=[12,60,25,70,90]
+grades[1:4]=[] 
+# 把編號從1到3的資料(1到4的區間，不含4)變成空的(刪掉)
+
+print(grades)
+grades=[12,60,25,70,90]
+grades=grades+[12,33]
+print(grades)
+#grade合成
+
+grades=[12,60,25,70,90] 
+length=len(grades)
+print(length)
+# 取得列表的長度(資料有幾個)，len(列表資料)，
+
+data=[[3,4,5],[6,7,8]]
+print(data[0])
+#印出編號0的資料(此時編號0是一個garde[3,4,5])
+
+print(data[0][1])
+#印出資料編號0中的編號1資料
+print(data[0][0:2])
+#印出資料編號0中從0~1編號的資料(不含2)
+print(data)
+data[0][0:2]=[5,5,5]
+print(data)
+#把資料編號0中編號0~1資料assign成資料{[5,5,5]，然後印出
+
+# 有序不可變動列表 Tuple
+data=(3,4,5)
+print(data[2])
+print(data[0:2])
+#用法同list，但資料不可變
+
+data[0] = 5
+print(data)
+# # 錯誤︰Tuple的資料不可以變動</pre>
 <h2>基礎C</h2>
 <h1>About</h1>
 <p>Repository: <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a></p>

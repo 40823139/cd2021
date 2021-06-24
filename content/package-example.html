@@ -133,10 +133,28 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">set-dictionary << <a href='set-dictionary.html'>Previous</a> <a href='datatype.html'>Next</a> >> datatype<br /><h1>start</h1>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print("安安你好")
-#print("")內任何語言都可，但要記得括號內的""或''</pre>
-<br />set-dictionary << <a href='set-dictionary.html'>Previous</a> <a href='datatype.html'>Next</a> >> datatype</div>
+    <div id="tipue_search_content">基礎Python << <a href='基礎Python.html'>Previous</a> <a href='geometry.html'>Next</a> >> geometry<br /><h1>package-example</h1>
+<h4>config.json</h4>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">{"name": "new name", "version": "10.0.0"}</pre>
+<p></p>
+<h4>main</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import geometry.line #import時，要載入完整的名稱(封包.module)
+result = geometry.line.dis(1,5,1,5)
+print(result)
+#載入封包geometry中的line模組，進行兩點距離運算
+
+import geometry.point
+result = geometry.point.slope(1,5,1,5)
+print(result)
+#載入封包geometry中的slope模組，進行斜率運算
+
+import geometry.point as p
+result = p.slope(1,5,1,5) #記得as成另一名稱，後面程式呼叫要記得改
+print(result)
+</pre>
+<p></p>
+<h4></h4>
+<p></p><br />基礎Python << <a href='基礎Python.html'>Previous</a> <a href='geometry.html'>Next</a> >> geometry</div>
         
     <!-- footer -->
       <div class="container">

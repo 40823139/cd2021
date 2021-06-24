@@ -170,7 +170,23 @@
 <p>機構預想上較stage-1更加縝密，減少了過於理想化的情況，也因此修改的時間花費更少。</p>
 <p>成品:</p>
 <h1>Stage-3</h1>
-<h2>W16 exam</h2><h2>W13~W14</h2>
+<h2>模型簡化</h2>
+<p>coppeliasim的模型並不是我們在繪圖軟體畫得那樣平順，因為導入模型時軟體會將物件做分割，以便進行力學計算，而下列影片將講述有關於為什麼要進行模型簡化的初步概念，內容可能非百分百正確的概念，請諒解</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/H7Ko2wIVNDo" width="560"></iframe></p>
+<p></p>
+<p></p>
+<h2>W16 exam</h2>
+<p>關於內容的講解，請至影片連結觀看，onshape與MTB robot在第二個連結有詳細說明，api部分請至官方查詢</p>
+<p><strong>onshape</strong></p>
+<p><a href="https://cad.onshape.com/documents/b86909090dc534c65a972d39/w/549ba34594ccf43b5b74018b/e/2c0262282146da66963380b4">連結</a></p>
+<p><strong>MTB robot取放 說明</strong></p>
+<p><a href="https://www.youtube.com/watch?v=dMsrPQLlR9A&amp;ab_channel=%E7%8E%8B%E9%8A%98%E6%A5%AB">連結</a></p>
+<p><strong>MTB robot鍵盤範例 說明</strong></p>
+<p><a href="https://www.youtube.com/watch?v=LVjSECSZuzk&amp;ab_channel=%E7%8E%8B%E9%8A%98%E6%A5%AB">連結</a></p>
+<p><strong>google dirve檔案</strong></p>
+<p><a href="https://drive.google.com/drive/u/1/folders/1bE4Pjyf36YRFcDa-dAT9rZsXSTywkF2T">連結</a></p>
+<p></p>
+<h2>W13~W14</h2>
 <h3>翻譯</h3>
 <p><span>We saw this simple two-link robot in the previous lecture about forward kinematics.</span></p>
 <p>我們之前有在正向運動學的課程中有看到這個簡單的二連桿機械手臂。</p>
@@ -312,19 +328,384 @@ for i in range(len(data)):
 <p>將stage-1與stage-2用python remote api 操控</p>
 <h2>task3</h2>
 <h1>機器人學</h1>
-<p></p>
 <h2>正向運動學</h2>
 <p><img alt="" height="310" src="/images/002.png" width="500"/></p>
-<p>上圖為一個多軸的機械手臂簡圖，若要控制此機械臂可藉由控制每個joint的角度，使夾爪(point3)產生紅色線條的路徑。也就是說，利用每個關節的角度控制來達到終端(夾爪)的路徑，就是正向運動學的概念。</p>
 <p></p>
+<p>上圖為一個多軸的機械手臂簡圖，若要控制此機械臂可藉由控制每個joint的角度，使夾爪(point3)產生紅色線條的路徑。也就是說，利用每個關節的角度控制來達到終端(夾爪)的目標位置。想像現在你面前有個杯子，他在手臂的正45度處，你想拿起這個杯子，你可以手彎45度拿到這個杯子，就是正向運動學的概念。</p>
+<p>正向運動學裡，你可以控制每一個關節的角度，所以對於動作掌握上是百分之百的，但是IK只能確保到目標點，不能掌握動作，而正向運動學因為要控制每個角度，所以計算上較為困難，所以各有利弊</p>
 <h2>逆向運動學</h2>
 <p><img alt="" height="299" src="/images/002.png" width="482"/></p>
-<p>上圖為一個多軸機械手臂的簡圖，藉由終端(紅色的路徑)反向的讓每個關節生成角度，以達到需要的路徑。也就是說，給予夾爪一個坐標系，是否其他關節能自己推敲出座標與角度，此概念即逆向運動學。</p>
+<p>上圖為一個多軸機械手臂的簡圖，紅色部分是移動路徑路徑。想像有個杯子，你的左邊20公分、前面15公分出<span>，你想拿起這個杯子，你的腦袋會告訴你，你現在手臂必須彎曲一個角度才能拿到這個杯子</span>，現在，給予夾爪一個坐標(目的地座標)，是否其他關節能自己推敲出座標與角度，此概念即逆向運動學。<br/>逆向運動學方便且快速，可以減少很多計算時間，尤其在三維空間中!但是正如上面所舉的例子，你的手想拿杯子，可以從左邊拿、從上面拿、側邊拿，不管任何一個方式都能到杯子的位置，也就是說，IK的控制沒辦法像順向(正向)運動學一樣精準，想控制每個角度都行，因為角度是從座標逆推出來的，而N種角度都能到這個座標，所以像是些有限空間或是極度精準的控制就需考慮用正向運動學。</p>
 <h1>Program</h1>
+<p></p>
+<p></p>
 <h2>基礎Python</h2>
 <p>在此將分享於外部所學的python基礎知識</p>
 <p>資料來源:<a href="https://www.youtube.com/user/padalab">彭彭的課程</a></p>
-<h3>number-string</h3>
+<h3>package-example</h3>
+<h4>config.json</h4>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">{"name": "new name", "version": "10.0.0"}</pre>
+<p></p>
+<h4>main</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import geometry.line #import時，要載入完整的名稱(封包.module)
+result = geometry.line.dis(1,5,1,5)
+print(result)
+#載入封包geometry中的line模組，進行兩點距離運算
+
+import geometry.point
+result = geometry.point.slope(1,5,1,5)
+print(result)
+#載入封包geometry中的slope模組，進行斜率運算
+
+import geometry.point as p
+result = p.slope(1,5,1,5) #記得as成另一名稱，後面程式呼叫要記得改
+print(result)
+</pre>
+<p></p>
+<h4>data.txt</h4>
+<pre class="brush:plain;auto-links:false;toolbar:false" contenteditable="false">八里
+三芝
+土城
+大安福州山
+坪林
+深坑
+蘆洲
+鶯歌
+大豹
+中正橋
+福山
+大桶山
+五堵
+石門
+巴陵
+高義
+嘎拉賀
+霞雲
+玉峰
+白石
+鎮西堡
+西丘斯山
+池端
+五分山
+板橋
+淡水
+鞍部
+台北
+陽明山
+基隆
+新店
+大豹1
+山佳
+坪林1
+四堵
+泰平
+福山1
+桶後
+屈尺
+大尖山
+大坪
+五指山
+福隆
+雙溪1
+富貴角
+三和
+金山
+鼻頭角
+三貂角
+社子
+平等
+大直
+天母
+永和
+永和(遷站)
+士林
+內湖
+三重
+大屯山
+三峽
+信義
+下盆
+石碇
+火燒寮
+瑞芳
+五股
+林口
+四十份
+關渡
+文山
+大安森林
+中和
+中和(遷站)
+新莊
+碧湖
+九芎根
+十三股
+坪林2
+太平
+湖田國小
+大屯國小
+桃源國中
+北投國小
+陽明高中
+太平國小
+民生國中
+中正國中
+三興國小
+格致國中
+平等國小
+至善國中
+碧湖國小
+東湖國小
+留公國中
+舊莊國小
+市政中心
+博嘉國小
+北政國中
+長安國小
+埤腹
+雙園
+中洲
+玉成
+建國
+福德
+奇岩
+雙溪
+南港舊莊里
+南港茶製場
+南港九如里
+內湖安泰里
+士林溪山里
+士林明德樂園
+士林菁山里
+士林擎天崗
+北投貴子坑
+中山劍南路
+北投竹子湖
+北投小油坑
+挹翠山莊
+文山貓空
+文山指南里
+望星橋
+白馬山莊
+中和橋
+磺溪橋
+宜興橋
+信義四獸山
+內湖金面山
+內湖大湖里
+北投稻香里
+中山劍潭山
+文山仙跡岩
+北投水磨坑溪
+士林猴洞溪(莊頂路)
+士林猴洞溪(至善路)
+內湖大溝溪
+富德公墓
+松山
+文化大學
+台灣大學
+文山茶改
+深坑
+國三南深路
+石門水庫
+大豹2
+福山2
+大桶山1
+坪林3
+五堵
+竹子湖1
+熊空山
+碧湖1
+石碇1
+三峽1
+瑞芳1
+火燒寮1
+社后橋
+三貂嶺
+富貴角1
+平溪活動中心
+平溪旅遊中心
+暖江橋
+瑞亭國小
+復興國小
+萬華國中
+</pre>
+<p></p><h3>geometry</h3>
+<h4>_init_</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#一個封包必須要有_init_.py(可以是空的)才能判別，否則判定為普通資料夾
+#封包就是模組的資料夾</pre>
+<p></p>
+<h4>line</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def dis(x1,x2,y1,y2):
+    return ((x2-x1)**2+(y2-y1)**2)**0.5
+</pre>
+<p></p>
+<h4>point</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def slope(x1,x2,y1,y2):
+    return (y2-y1)/(x2-x1)
+</pre>
+<p></p><h3>funtion-args</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#參數的預設資料
+def power(base,exp=1):
+    print(base**exp)
+power(11,2)
+power(11)
+#定義函式時，可assign給變數一個初始值
+
+#使用參數名稱對應
+def divide(n1,n2):
+    print(n1/n2)
+divide(10,2)
+divide(n2=2,n1=10)
+#呼叫時可直接指定變數去assign，若資料有給初始值，且只要變動一個變數時，用指定則很方便
+
+#無限/不定長度 參數資料
+def avg(*ns): 
+    sum = 0
+    for n in ns :
+        sum = sum+n
+    print(sum/len(ns))
+avg(3,5,10)
+avg(2,-1,-1,10)
+#將def定義式的變數用*處理，表示可以輸入不定的數值，且會用tuple導入(有序)，因為用tuple，所以用for迴圈做處理，將所有資料印出後累加除以資料數
+</pre>
+<p></p>
+<h3>funtion-basic</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def multiply(n1,n2):
+    print(n1*n2)
+#定義一個函式(只是定義，沒有真正印出，要呼叫才會執行)
+multiply(3,4)
+#呼叫出已經定義過的函式multiply，執行裡面寫的東西
+
+value=multiply(3,4)
+print(value)
+#呼叫函式，所以執行m1*n2，而def沒寫return，就會定義value為none(回傳值return是自己定義的，與函式無關!)
+
+def multiply0(n1,n2):
+    return n1*n2
+value = multiply0(5,2)+multiply0(2,5)
+print(value)
+#回傳值的號有個好處，就是可在定義的函式以外繼續操作資料(例如結果的相加)
+
+#函式可用來做程式的包裝，要做同件事時，可以不用一直複製貼上，不只可看性佳，速度又快
+def caculate(max):
+    sum = 0
+    for n in range(1,max+1):
+        sum += n
+    print(sum)
+caculate(10)
+caculate(20)
+#def 一個累加的程式，若有用到則不用再一直打或複製</pre>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#while迴圈
+i = 1
+while i&lt;=10:
+    print(i)
+    i+=1
+#將i assign成1，然後whlie i小於等於10(滿足while條件)之前，迴圈不斷執行
+
+i = 1
+sum = 0
+while i&lt;=10:
+    sum = sum+i
+    i += 1
+print(sum)
+#先assign i與sum(總和)的值，執行while，把sum加上i的值，然後i+1，印出sum，直到while滿足為止(print如果放回圈內會一直印)
+#sum(總和)當作一個變數就好，有新的數值就寫進去變數裡面，然後這張紙的數字就是不斷把所有數值加起來
+
+#for迴圈
+for x in [1,3,5]:
+    print(x)
+#給一個x變數，每次就循序的抓一個資料進去執行動作，直到資料抓完了
+
+for x in 'fuckyou':
+    print(x)
+
+for x in range(5):
+    print(x)
+#for x資料，這個字資料是range(5)，同[0,1,2,3,4,]，會印出到5之前的數字(一樣不含5)
+
+for x in range(5,10):
+    print(x)
+#印出從5開始到9(不含10)
+
+sum = 0
+for x in range(1,11):
+    sum = sum+x
+print(sum)
+#定義初始值sum = 0，for x 一個range(1,11)，sum assign成sum加上x，迴圈結束，執行下個程式print</pre>
+<p><br/><br/><br/></p>
+<h3>loop-basic</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#while迴圈
+i = 1
+while i&lt;=10:
+    print(i)
+    i+=1
+#將i assign成1，然後whlie i小於等於10(滿足while條件)之前，迴圈不斷執行
+
+i = 1
+sum = 0
+while i&lt;=10:
+    sum = sum+i
+    i += 1
+print(sum)
+#先assign i與sum(總和)的值，執行while，把sum加上i的值，然後i+1，印出sum，直到while滿足為止(print如果放回圈內會一直印)
+#sum(總和)當作一個變數就好，有新的數值就寫進去變數裡面，然後這張紙的數字就是不斷把所有數值加起來
+
+#for迴圈
+for x in [1,3,5]:
+    print(x)
+#給一個x變數，每次就循序的抓一個資料進去執行動作，直到資料抓完了
+
+for x in 'fuckyou':
+    print(x)
+
+for x in range(5):
+    print(x)
+#for x資料，這個字資料是range(5)，同[0,1,2,3,4,]，會印出到5之前的數字(一樣不含5)
+
+for x in range(5,10):
+    print(x)
+#印出從5開始到9(不含10)
+
+sum = 0
+for x in range(1,11):
+    sum = sum+x
+print(sum)
+#定義初始值sum = 0，for x 一個range(1,11)，sum assign成sum加上x，迴圈結束，執行下個程式print</pre>
+<p></p><h3>loop-control</h3>
+<h3>module</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#用內建模組取得資訊
+import sys
+print(sys.platform)#取得作業系統資訊
+print(sys.maxsize)#取得最大整數值(不限在python裡面)
+
+
+
+import sys as s
+print(s.platform)
+print(s.maxsize)
+#可將模組名稱as為另一名稱做呼叫
+
+import sys
+sys.path.append("modules")
+print("sys.path")
+#增加模組路經，使系統能搜尋到(要在呼叫前就新增才行)
+#路徑可用相對路徑或絕對路徑
+
+import sys
+print(sys.path)
+#印出系統路徑(注意系統路徑!避免檔案找不到)
+import geometry 
+result=geometry.dis(5,10,5,10)
+print(result)
+#引用gemetry模組，計算兩點距離
+result=geometry.slope(5,10,5,10)
+print(result)
+#引用gemetry模組，計算兩點斜率
+
+</pre>
+<p></p><h3>number-string</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 數字運算
 x=3+6
 print(x)
@@ -611,7 +992,7 @@ print(data[0:2])
 data[0] = 5
 print(data)
 # # 錯誤︰Tuple的資料不可以變動</pre>
-<h2>基礎C</h2>
+<p></p>
 <h1>About</h1>
 <p>Repository: <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a></p>
 <p>Github Pages: <a href="https://mde.tw/cmstemplate">https://mde.tw/cmstemplate</a></p>

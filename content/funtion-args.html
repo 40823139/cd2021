@@ -133,10 +133,33 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">set-dictionary << <a href='set-dictionary.html'>Previous</a> <a href='datatype.html'>Next</a> >> datatype<br /><h1>start</h1>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print("安安你好")
-#print("")內任何語言都可，但要記得括號內的""或''</pre>
-<br />set-dictionary << <a href='set-dictionary.html'>Previous</a> <a href='datatype.html'>Next</a> >> datatype</div>
+    <div id="tipue_search_content">geometry << <a href='geometry.html'>Previous</a> <a href='funtion-basic.html'>Next</a> >> funtion-basic<br /><h1>funtion-args</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#參數的預設資料
+def power(base,exp=1):
+    print(base**exp)
+power(11,2)
+power(11)
+#定義函式時，可assign給變數一個初始值
+
+#使用參數名稱對應
+def divide(n1,n2):
+    print(n1/n2)
+divide(10,2)
+divide(n2=2,n1=10)
+#呼叫時可直接指定變數去assign，若資料有給初始值，且只要變動一個變數時，用指定則很方便
+
+#無限/不定長度 參數資料
+def avg(*ns): 
+    sum = 0
+    for n in ns :
+        sum = sum+n
+    print(sum/len(ns))
+avg(3,5,10)
+avg(2,-1,-1,10)
+#將def定義式的變數用*處理，表示可以輸入不定的數值，且會用tuple導入(有序)，因為用tuple，所以用for迴圈做處理，將所有資料印出後累加除以資料數
+</pre>
+<p></p>
+<br />geometry << <a href='geometry.html'>Previous</a> <a href='funtion-basic.html'>Next</a> >> funtion-basic</div>
         
     <!-- footer -->
       <div class="container">

@@ -133,10 +133,38 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">set-dictionary << <a href='set-dictionary.html'>Previous</a> <a href='datatype.html'>Next</a> >> datatype<br /><h1>start</h1>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print("安安你好")
-#print("")內任何語言都可，但要記得括號內的""或''</pre>
-<br />set-dictionary << <a href='set-dictionary.html'>Previous</a> <a href='datatype.html'>Next</a> >> datatype</div>
+    <div id="tipue_search_content">loop-control << <a href='loop-control.html'>Previous</a> <a href='number-string.html'>Next</a> >> number-string<br /><h1>module</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#用內建模組取得資訊
+import sys
+print(sys.platform)#取得作業系統資訊
+print(sys.maxsize)#取得最大整數值(不限在python裡面)
+
+
+
+import sys as s
+print(s.platform)
+print(s.maxsize)
+#可將模組名稱as為另一名稱做呼叫
+
+import sys
+sys.path.append("modules")
+print("sys.path")
+#增加模組路經，使系統能搜尋到(要在呼叫前就新增才行)
+#路徑可用相對路徑或絕對路徑
+
+import sys
+print(sys.path)
+#印出系統路徑(注意系統路徑!避免檔案找不到)
+import geometry 
+result=geometry.dis(5,10,5,10)
+print(result)
+#引用gemetry模組，計算兩點距離
+result=geometry.slope(5,10,5,10)
+print(result)
+#引用gemetry模組，計算兩點斜率
+
+</pre>
+<p></p><br />loop-control << <a href='loop-control.html'>Previous</a> <a href='number-string.html'>Next</a> >> number-string</div>
         
     <!-- footer -->
       <div class="container">

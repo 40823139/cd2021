@@ -326,7 +326,14 @@ for i in range(len(data)):
 <p></p>
 <h2>task2</h2>
 <p>將stage-1與stage-2用python remote api 操控</p>
+<p></p>
+<p>以下為成品，改善方面為接球手臂，擊球手臂只有remote api版本有些微調整，所以會跳出參數提醒(因為擊球手臂的速度跟加速度參數過於誇張，所以會導致結果不穩定，誤差值放大!)</p>
+<p>(1)此版本是remote api版本，利用IK概念，控制末端座標達成</p>
+<p><a href="https://drive.google.com/drive/folders/1jf143S6Ug-NydPkbdXxO_7bxchTvbHmB?usp=sharing">google drive </a></p>
+<p>(2)此版本是lua版本，同樣利用IK概念，但是是建立在三軸上做末端dummy移動</p>
+<p><a href="https://drive.google.com/drive/folders/1lquV4GU62pKSobDSgHw8QtI-Qqtev0JJ?usp=sharing">google dirve </a></p>
 <h2>task3</h2>
+<p>OBS部分請看小組網站</p>
 <h1>機器人學</h1>
 <h2>正向運動學</h2>
 <p><img alt="" height="310" src="/images/002.png" width="500"/></p>
@@ -363,7 +370,8 @@ print(result)
 </pre>
 <p></p>
 <h4></h4>
-<p></p><h3>geometry</h3>
+<p></p>
+<h3>geometry</h3>
 <h4>_init_</h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#一個封包必須要有_init_.py(可以是空的)才能判別，否則判定為普通資料夾
 #封包就是模組的資料夾</pre>
@@ -377,7 +385,8 @@ print(result)
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def slope(x1,x2,y1,y2):
     return (y2-y1)/(x2-x1)
 </pre>
-<p></p><h3>funtion-args</h3>
+<p></p>
+<h3>funtion-args</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#參數的預設資料
 def power(base,exp=1):
     print(base**exp)
@@ -506,7 +515,8 @@ for x in range(1,11):
     sum = sum+x
 print(sum)
 #定義初始值sum = 0，for x 一個range(1,11)，sum assign成sum加上x，迴圈結束，執行下個程式print</pre>
-<p></p><h3>loop-control</h3>
+<p></p>
+<h3>loop-control</h3>
 <h3>module</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#用內建模組取得資訊
 import sys
@@ -538,7 +548,8 @@ print(result)
 #引用gemetry模組，計算兩點斜率
 
 </pre>
-<p></p><h3>number-string</h3>
+<p></p>
+<h3>number-string</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 數字運算
 x=3+6
 print(x)
@@ -845,7 +856,10 @@ print(data)
 <li><span style="background-color: #ffff99;">cms.bat</span> - 讓使用者執行動態網站用的批次檔案.</li>
 <li><span style="background-color: #ffff99;">acp.bat</span> - 若使用者已經將倉儲設為 ssh 連線, 且提供遠端與近端的認證模式, 則可以在執行此批次指令之後加上提交字串, 即可執行 git add ., git commit -m "提交訊息", 以及 git push 等三個指令.</li>
 </ol>
-<h1>CMSiMDE</h1>
+<h1>學期總結</h1>
+<p><span style="font-weight: 400;">這個學期課程的主要核心在團隊分工跟自我學習上，將所有學到的技術公開，讓所有人都能獲得這項技術，避免台灣人將技術私藏的陋習!一個人就算擁有不錯的技術，但在團隊中不懂得分享，那就是準備一個人做到死。</span></p>
+<p><span style="font-weight: 400;">其實我原先也有技術私藏的心態，因為認為我花了那麼多時間讀了國外paper跟文章，那些外語文章即便是語文能力尚可的人，讀久了還是會累的!為什麼我要把我那麼辛苦得來的知識分享給那些沒花多少時間找資料的人，但是!現實情況就是，如果團隊中只有你會這項技術，那麼你就只會做到死，既然知識是自己學得的，分享出去其實也不會消失，而且在教學跟交流的過程往往會獲得靈感與加深知識!</span></p>
+<p>除了技術分享外，其實另一個重點就是產品設計，<span style="font-weight: 400;">身為機械設計工程師，設計一個產品必須考慮到實際應用面，不應該過度理想， 且應該利用所學到的理論，而這部分一直是高職體系所缺少的，我們對於產品的想法總是從成品開始出發，但是如果要每次都做出成品才知道不行的話，不止浪費時間浪費金錢，而且永遠只能當一個廉價勞工，所以接觸到coppeliasim正是學習機電資整合重要機會!雖然電資方面學機械的學生並不是如此了解，但是如果不懂機電資整合，依舊只能當四大旁邊提皮包的人，所以不應該將自己只限制在這個領域上，努力的去跨越理論的三道牆才行!明明能往上爬的人，卻放棄了機會，是很令人惋惜的!</span></p><h1>CMSiMDE</h1>
 <p>CMSiMDE (<a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a>) 是一套以 Python 與 Flask 框架編寫的網際內容管理系統,</p>
 <p>使用 CMSiMDE 建議使用者安裝 flask flask_cors bs4 lxml pelican markdown leo 等模組. 其中的 flask flask_cors bs4 lxml pelican markdown為啟動 CMSiMDE 的必要模組, 而 leo 則是 CMSMDE 開發者所使用的大綱管理工具, 可以用於與 CMSiMDE 整合的 Pelican blog 及 Reveal.js 網際簡報編輯之用.</p>
 <h2>基本操作</h2>

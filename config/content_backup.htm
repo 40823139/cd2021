@@ -326,7 +326,14 @@ for i in range(len(data)):
 <p></p>
 <h2>task2</h2>
 <p>將stage-1與stage-2用python remote api 操控</p>
+<p></p>
+<p>以下為成品，改善方面為接球手臂，擊球手臂只有remote api版本有些微調整，所以會跳出參數提醒(因為擊球手臂的速度跟加速度參數過於誇張，所以會導致結果不穩定，誤差值放大!)</p>
+<p>(1)此版本是remote api版本，利用IK概念，控制末端座標達成</p>
+<p><a href="https://drive.google.com/drive/folders/1jf143S6Ug-NydPkbdXxO_7bxchTvbHmB?usp=sharing">google drive </a></p>
+<p>(2)此版本是lua版本，同樣利用IK概念，但是是建立在三軸上做末端dummy移動</p>
+<p><a href="https://drive.google.com/drive/folders/1lquV4GU62pKSobDSgHw8QtI-Qqtev0JJ?usp=sharing">google dirve </a></p>
 <h2>task3</h2>
+<p>OBS部分請看小組網站</p>
 <h1>機器人學</h1>
 <h2>正向運動學</h2>
 <p><img alt="" height="310" src="/images/002.png" width="500"/></p>
@@ -362,175 +369,9 @@ result = p.slope(1,5,1,5) #記得as成另一名稱，後面程式呼叫要記得
 print(result)
 </pre>
 <p></p>
-<h4>data.txt</h4>
-<pre class="brush:plain;auto-links:false;toolbar:false" contenteditable="false">八里
-三芝
-土城
-大安福州山
-坪林
-深坑
-蘆洲
-鶯歌
-大豹
-中正橋
-福山
-大桶山
-五堵
-石門
-巴陵
-高義
-嘎拉賀
-霞雲
-玉峰
-白石
-鎮西堡
-西丘斯山
-池端
-五分山
-板橋
-淡水
-鞍部
-台北
-陽明山
-基隆
-新店
-大豹1
-山佳
-坪林1
-四堵
-泰平
-福山1
-桶後
-屈尺
-大尖山
-大坪
-五指山
-福隆
-雙溪1
-富貴角
-三和
-金山
-鼻頭角
-三貂角
-社子
-平等
-大直
-天母
-永和
-永和(遷站)
-士林
-內湖
-三重
-大屯山
-三峽
-信義
-下盆
-石碇
-火燒寮
-瑞芳
-五股
-林口
-四十份
-關渡
-文山
-大安森林
-中和
-中和(遷站)
-新莊
-碧湖
-九芎根
-十三股
-坪林2
-太平
-湖田國小
-大屯國小
-桃源國中
-北投國小
-陽明高中
-太平國小
-民生國中
-中正國中
-三興國小
-格致國中
-平等國小
-至善國中
-碧湖國小
-東湖國小
-留公國中
-舊莊國小
-市政中心
-博嘉國小
-北政國中
-長安國小
-埤腹
-雙園
-中洲
-玉成
-建國
-福德
-奇岩
-雙溪
-南港舊莊里
-南港茶製場
-南港九如里
-內湖安泰里
-士林溪山里
-士林明德樂園
-士林菁山里
-士林擎天崗
-北投貴子坑
-中山劍南路
-北投竹子湖
-北投小油坑
-挹翠山莊
-文山貓空
-文山指南里
-望星橋
-白馬山莊
-中和橋
-磺溪橋
-宜興橋
-信義四獸山
-內湖金面山
-內湖大湖里
-北投稻香里
-中山劍潭山
-文山仙跡岩
-北投水磨坑溪
-士林猴洞溪(莊頂路)
-士林猴洞溪(至善路)
-內湖大溝溪
-富德公墓
-松山
-文化大學
-台灣大學
-文山茶改
-深坑
-國三南深路
-石門水庫
-大豹2
-福山2
-大桶山1
-坪林3
-五堵
-竹子湖1
-熊空山
-碧湖1
-石碇1
-三峽1
-瑞芳1
-火燒寮1
-社后橋
-三貂嶺
-富貴角1
-平溪活動中心
-平溪旅遊中心
-暖江橋
-瑞亭國小
-復興國小
-萬華國中
-</pre>
-<p></p><h3>geometry</h3>
+<h4></h4>
+<p></p>
+<h3>geometry</h3>
 <h4>_init_</h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#一個封包必須要有_init_.py(可以是空的)才能判別，否則判定為普通資料夾
 #封包就是模組的資料夾</pre>
@@ -544,7 +385,8 @@ print(result)
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def slope(x1,x2,y1,y2):
     return (y2-y1)/(x2-x1)
 </pre>
-<p></p><h3>funtion-args</h3>
+<p></p>
+<h3>funtion-args</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#參數的預設資料
 def power(base,exp=1):
     print(base**exp)
@@ -673,7 +515,8 @@ for x in range(1,11):
     sum = sum+x
 print(sum)
 #定義初始值sum = 0，for x 一個range(1,11)，sum assign成sum加上x，迴圈結束，執行下個程式print</pre>
-<p></p><h3>loop-control</h3>
+<p></p>
+<h3>loop-control</h3>
 <h3>module</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#用內建模組取得資訊
 import sys
@@ -705,7 +548,8 @@ print(result)
 #引用gemetry模組，計算兩點斜率
 
 </pre>
-<p></p><h3>number-string</h3>
+<p></p>
+<h3>number-string</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 數字運算
 x=3+6
 print(x)
@@ -1012,6 +856,7 @@ print(data)
 <li><span style="background-color: #ffff99;">cms.bat</span> - 讓使用者執行動態網站用的批次檔案.</li>
 <li><span style="background-color: #ffff99;">acp.bat</span> - 若使用者已經將倉儲設為 ssh 連線, 且提供遠端與近端的認證模式, 則可以在執行此批次指令之後加上提交字串, 即可執行 git add ., git commit -m "提交訊息", 以及 git push 等三個指令.</li>
 </ol>
+<h1>學期總結</h1>
 <h1>CMSiMDE</h1>
 <p>CMSiMDE (<a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a>) 是一套以 Python 與 Flask 框架編寫的網際內容管理系統,</p>
 <p>使用 CMSiMDE 建議使用者安裝 flask flask_cors bs4 lxml pelican markdown leo 等模組. 其中的 flask flask_cors bs4 lxml pelican markdown為啟動 CMSiMDE 的必要模組, 而 leo 則是 CMSMDE 開發者所使用的大綱管理工具, 可以用於與 CMSiMDE 整合的 Pelican blog 及 Reveal.js 網際簡報編輯之用.</p>
